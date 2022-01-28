@@ -9,7 +9,7 @@ function NavBar() {
     return (
         <nav>
             {links.map(link => {
-                <a href={link.href}>{link.title}</a>
+                <a href={link.href} className={currentPage === link.title ? 'nav-link active' : 'nav-link'}>{link.title}</a>
             })}
         </nav>
     );
