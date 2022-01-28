@@ -25,4 +25,12 @@ function PageContainer() {
 
     const handlePageChange = page => setCurrentPage(page);
 
+    return (
+        <>
+            <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
+            {renderPage}
+        </>
+    )
 }
+
+export default PageContainer;
