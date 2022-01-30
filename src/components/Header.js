@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
 
-function Header(currentPage, handlePageChange) {
+function Header({ currentPage, handlePageChange }) {
 
     return (
         <header>
