@@ -8,6 +8,7 @@ import Resume from './pages/Resume';
 function PageContainer() {
     const [currentPage, setCurrentPage] = useState('AboutMe');
 
+    //Renders the active page
     const renderPage = () => {
         switch(currentPage) {
             case 'AboutMe': 
