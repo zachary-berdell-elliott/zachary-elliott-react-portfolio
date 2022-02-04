@@ -1,7 +1,10 @@
 import React from 'react';
 
 function ContactMe() {
-    const [input, setInput] = useState('');
+    const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
     //Function for handling form submission
     const handleSubmit = (e) => {
@@ -15,7 +18,10 @@ function ContactMe() {
     }
 
     const emailCheck = (e) => {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailValid = re.test(String(e).toLowerCase());
 
+        if(!emailValid) setErrorMessage('You have entered an invalid email.');
     }
 
     const messageCheck = (e) => {
@@ -27,11 +33,11 @@ function ContactMe() {
             <h2>Contact Me</h2>
             <form ariaLabel="contact form" onSubmit={handleSubmit}>
                 <label for="user-name">Your Name</label>
-                <input type="text" id="user-name" autocomplete="name" required placeholder="Enter your name"/>
+                <input type="text" id="user-name" autocomplete="name" required placeholder="Enter your name" onChange={nameCheck}/>
                 <label for="user-email">Your Email</label>
-                <input type="text" id="user-email" autocomplete="email" required placeholder="Enter an email address"/>
+                <input type="text" id="user-email" autocomplete="email" required placeholder="Enter an email address" onChange={(emailCheck)}/>
                 <label for="user-message">Message</label>
-                <input type="text" id="user-message" required placeholder="Type your message here"/>
+                <input type="text" id="user-message" required placeholder="Type your message here" onChange={messageCheck}/>
                 <button id="submit-btn">Submit</button>
             </form>
         </main>
