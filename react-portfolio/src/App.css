@@ -1,0 +1,34 @@
+:root {
+    --grayish-blue: rgb(35, 41, 59);
+    --dark-border-color: rgb(13, 1, 20);
+    --bright-grey: rgb(200,200,200);
+    --section-header-color: rgb(41, 17, 61);
+    --link-hover-color: rgba(166, 226, 1, 0.45);
+}
+
+.zbe-label {
+    background-color: var(--bright-grey);
+    color: var(--grayish-blue)
+}
+
+header {
+    background-image: -moz-linear-gradient(55deg, var(--grayish-blue) 65%, var(--dark-border-color));
+}
+
+h1 {
+    font-size: 300%;
+    color: var(--grayish-blue);
+    background-color: var(--bright-grey);
+    padding: var(--name-border-sides);
+    border-style: none;
+    border-width: var(--name-border-sides);
+}
+
+nav a {
+    padding: 2%;
+    border-bottom: solid var(--bright-grey) 0.25em;
+    color: var(--bright-grey);
+    font-size: 150%;
+    margin: 3% 10% .5% 0%;
+    text-decoration: none;
+}
