@@ -16,7 +16,7 @@ function NavBar(props, { currentPage, handlePageChange }) {
                         {console.log(currentPage)}
                         <a href={link.href.toLowerCase()}
                             className={currentPage === link ? 'nav-link active' : 'nav-link'}
-                            onClick={() => handlePageChange(link.title)}>
+                            onClick={() => handlePageChange(link.title.replace(/ /g, ''))}>
                             {link.title}
                         </a>
                     </li>
