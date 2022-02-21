@@ -12,11 +12,11 @@ function PageContainer() {
     //Renders the active page
     const renderPage = (currentPage) => {
         switch(currentPage) {
-            case 'About Me': 
+            case 'AboutMe': 
                 return <AboutMe />;
             case 'Portfolio':
                 return <Portfolio />;
-            case 'Contact Me':
+            case 'ContactMe':
                 return <ContactMe />;
             case 'Resume':
                 return <Resume />;
