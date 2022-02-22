@@ -58,7 +58,16 @@ function Portfolio() {
         }
     ];
 
-    
+    return (
+        <main>
+            <h2>Portfolio</h2>
+            <section id="projects-section" className="flex-container">
+                {projects.map(project => (
+                    
+                ))}
+            </section>
+        </main>
+    );
 }
 
 export default Portfolio;
