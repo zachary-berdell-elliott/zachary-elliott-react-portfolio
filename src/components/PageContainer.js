@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import AboutMe from './pages/AboutMe';
 import Portfolio from './pages/Portfolio';
@@ -9,29 +10,21 @@ import Footer from './Footer';
 function PageContainer() {
     const [currentPage, setCurrentPage] = useState('AboutMe');
 
-    //Renders the active page
-    const renderPage = (currentPage) => {
-        switch(currentPage) {
-            case 'AboutMe': 
-                return <AboutMe />;
-            case 'Portfolio':
-                return <Portfolio />;
-            case 'ContactMe':
-                return <ContactMe />;
-            case 'Resume':
-                return <Resume />;
-            default:
-                console.log('There was an error rendering the page.');      
-        }
-    }
-
     const handlePageChange = page => setCurrentPage(page);
 
     return (
         <>
+        <Router>
             <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
-            {renderPage(currentPage)}
+            <Routes>
+                <Route exact path="/about-me" element={<AboutMe />} />
+                <Route exact path="/portfolio" element={<Portfolio />} />
+                <Route exact path="/contact-me" element={<ContactMe />} />
+                <Route exact path="/resume" element={<Resume />} />
+                <Route element={<AboutMe />} />
+            </Routes>
             <Footer />
+        </Router>
         </>
     )
 }
