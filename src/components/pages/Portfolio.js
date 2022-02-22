@@ -63,7 +63,32 @@ function Portfolio() {
             <h2>Portfolio</h2>
             <section id="projects-section" className="flex-container">
                 {projects.map(project => (
-                    
+                   <article 
+                    id={project.name.replace(/ /g, '-').toLowerCase()} 
+                    className={project.mainProject ? "main-project project-display" : "project-display"}
+                    key={project.name}
+                    >
+                        <a href={project.projectLink}
+                        style={{backgroundImage: project.image}}>
+                           <div className="display-label">
+                                <h3>{project.name}</h3>
+                                <p>{project.technologies}</p>
+                            </div> 
+                        </a>
+                        <span className="description-header">
+                            <button className="slide-btn">
+                                <h3 className="description-header">
+                                    Github and Description
+                                </h3>
+                            </button>
+                            <div classname="project-description">
+                                {project.description}
+                                <a href={project.GitHubLink}>
+                                    GitHub Repository
+                                </a>
+                            </div>
+                        </span>
+                    </article>
                 ))}
             </section>
         </main>
