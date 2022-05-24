@@ -24,6 +24,14 @@ h1 {
     border-width: var(--name-border-sides);
 }
 
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    margin-top: auto;
+    justify-content: space-evenly;
+}
+
 nav a {
     padding: 2%;
     border-bottom: solid var(--bright-grey) 0.25em;
@@ -31,4 +39,9 @@ nav a {
     font-size: 150%;
     margin: 3% 10% .5% 0%;
     text-decoration: none;
+}
+
+h2 {
+    margin-left: auto;
+    margin-right: auto;
 }
