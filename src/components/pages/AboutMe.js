@@ -15,9 +15,10 @@ function AboutMe() {
             I quit a little before I started school in order to focus on doing well in school.<br/><br/>
 
             I went to the University of Denver and I studied full stack development. 
-            From my studies I gained skills in MERN stack development, MySQL, HTML5, CSS3, GraphQL, Agile Methodologies, etc. 
+            From my studies I gained skills in MERN stack development (MongoDB, Express.js, React.js, Node.js), 
+            MySQL, HTML5, CSS3, GraphQL, Handlebars, Agile Methodologies, etc. 
             I did extra studying outside of class to learn more about the technical process of Search Engine Optimization (SEO),
-            Python (Flask and Django), and Java (Spring). <br /> <br />
+            Data Structures and Algorithms, Python (Flask and Django), and Java (Spring). <br /> <br />
 
             I recently accepted a postion as an Associate Software Developer at Charles Schwab.
             I am also willing to do work on the side. Please see my page on services or contact me to learn more.  

@@ -16,7 +16,7 @@ header {
 }
 
 h1 {
-    font-size: 300%;
+    font-size: 400%;
     color: var(--grayish-blue);
     background-color: var(--bright-grey);
     padding: var(--name-border-sides);
@@ -24,7 +24,7 @@ h1 {
     border-width: var(--name-border-sides);
 }
 
-nav ul {
+header nav ul {
     display: flex;
     flex-direction: row;
     align-content: flex-end;
@@ -32,7 +32,7 @@ nav ul {
     justify-content: space-evenly;
 }
 
-nav a {
+header nav a {
     padding: 2%;
     border-bottom: solid var(--bright-grey) 0.25em;
     color: var(--bright-grey);
@@ -42,6 +42,25 @@ nav a {
 }
 
 h2 {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    font-size: 350%;
+    color: var(--section-header-color);
+    border-bottom: 1% black;
+}
+
+footer {
+    position: fixed;
+    bottom:0;
+    width:100%;
+    background-color: var(--dark-border-color);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    padding: 1% 0% 1%;
+}
+
+footer nav a {
+    margin-left: 4%;
 }
