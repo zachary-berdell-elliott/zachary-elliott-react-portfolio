@@ -21,7 +21,8 @@ function AboutMe() {
             Data Structures and Algorithms, Python (Flask and Django), and Java (Spring). <br /> <br />
 
             I recently accepted a postion as an Associate Software Developer at Charles Schwab.
-            I am also willing to do work on the side. Please see my page on services or contact me to learn more.  
+            I am also willing to do work on the side. Please see my page on services or contact me to learn more.
+            <br/><br/><br/>
             </p>
         </main>
     );

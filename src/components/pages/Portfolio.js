@@ -92,6 +92,7 @@ function Portfolio() {
                     </article>
                 ))}
             </section>
+            <br/><br/><br/>
         </main>
     );
 }

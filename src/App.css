@@ -68,3 +68,34 @@ footer nav {
 footer nav a {
     margin-left: 4%;
 }
+
+.about-paragraph {
+    max-width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem
+}
+
+.bottem-el {
+    padding-bottom: 500%;
+}
+
+.resume-list {
+    margin-left: 35%;
+    margin-top: 5%;
+    background-image: -moz-radial-gradient(var(--grayish-blue), var(--section-header-color));
+    color: var(--bright-grey);
+    border-radius: 8px;
+    max-width: fit-content;
+    padding: 2% 3%;
+    border: solid var(--dark-border-color) 2%;
+    box-shadow: -20px 10px;
+}
+
+.resume-list h3 {
+    font-size: 250%;
+}
+
+.resume-list ul {
+    font-size: 150%;
+}
