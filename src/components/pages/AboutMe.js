@@ -4,7 +4,7 @@ function AboutMe() {
     return (
         <main>
             <h2>About Me</h2>
-            <p>
+            <p className="about-paragraph">
             I am Zachary Elliott. I am a full stack developer who is proficient in SQL, MongoDB, Node.js, JQuery, and CSS. <br/><br/>
 
             I graduated from Cherry Creek High School in 2020.
