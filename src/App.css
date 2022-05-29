@@ -41,6 +41,10 @@ header nav a {
     text-decoration: none;
 }
 
+main {
+    padding-bottom: 2%;
+}
+
 h2 {
     margin-left: auto;
     margin-right: auto;
@@ -80,8 +84,11 @@ footer nav a {
     padding-bottom: 500%;
 }
 
-.resume-list {
+.card-section {
     margin-left: 35%;
+}
+
+.resume-list {
     margin-top: 5%;
     background-image: -moz-radial-gradient(var(--grayish-blue), var(--section-header-color));
     color: var(--bright-grey);
@@ -98,4 +105,34 @@ footer nav a {
 
 .resume-list ul {
     font-size: 150%;
+}
+
+.resume-list ul ul {
+    font-size: 100%;
+}
+
+.flexbox {
+    display: flex;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    max-width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    padding: 3% 2.5%;
+    border-style:groove;
+    border-radius: 4px;
+}
+
+#submit-btn {
+    margin-top: 3%;
+}
+
+.required {
+    color: red;
 }

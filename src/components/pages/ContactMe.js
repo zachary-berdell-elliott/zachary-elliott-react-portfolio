@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 
 function ContactMe() {
-    const [email, setEmail] = useState('Your Email');
-  const [name, setName] = useState('Your Name');
-  const [message, setMessage] = useState('Message');
-  const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessages, setErrorMessages] = useState({
+        nameError: '',
+        emailError: '',
+        messageError: ''
+    });
+
+    const [fieldEngaged, setFieldEngaged] = useState({
+        nameEngaged: false,
+        emailEngaged: false,
+        massageEngaged: false
+    });
+
+    const [feedback, setFeedback] = useState('');
 
     //Function for handling form submission
     const handleSubmit = (e) => {
@@ -13,38 +22,56 @@ function ContactMe() {
 
     }
 
-    const nameCheck = (e) => {
-        e.preventDefault();
-        (e.target.value.length) ? setName('Your Name') : setName('Your name is required');
-    }
-
-    const emailValid = (e) => {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const emailValid = re.test(String(e.target.value).toLowerCase());
-
-        !emailValid ? setErrorMessage('Make sure you enter a valid email.') : setErrorMessage('');
-    }
-
     const messageCheck = (e) => {
-        e.preventDefault();
-        e.target.value.length ? setMessage('Message') : setMessage('A message is required');
+        e.preventDefault;
+
+
     }
 
     const emailCheck = (e) => {
-        e.preventDefault();
-        e.target.value.length ? setEmail('Your Email') : setEmail('Your email is required');
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailValid = re.test(String(e.target.value).toLowerCase());
+
+        if (!event.target.value.length) {
+            setErrorMessages({
+                ...errorMessages,
+                emailError: 'Your email is required.'
+            });
+        } else if (!emailValid) {
+            setErrorMessages({
+                ...errorMessages,
+                emailError: 'You did not enter a valid email.'
+            });
+        } else {
+            setErrorMessages({
+                ...errorMessages,
+                emailError: ''
+            });
+        }
     }
 
+    const nameCheck = (e) => {
+        e.preventDefault;
+
+        !e.target.length ? setErrorMessages({
+            ...errorMessages,
+            nameError: 'Please eneter a name to submit this form.'
+        }) : setErrorMessages({
+            ...errorMessages,
+            nameError: ''
+        });
+    }
     return(
         <main>
             <h2>Contact Me</h2>
-            <form aria-label="contact form" onSubmit={handleSubmit}>
-                <label htmlFor="user-name">{name}</label>
+            <form aria-label="contact form" onSubmit={handleSubmit} id="contact-form">
+                <label htmlFor="user-name">Your Name <span className="required">*</span></label>
                 <input type="text" id="user-name" autoComplete="name" required placeholder="Enter your name" onBlur={nameCheck}/>
-                <label htmlFor="user-email">{email}</label>
-                <input type="text" id="user-email" autoComplete="email" required placeholder="Enter an email address"  onBlur={emailCheck} onChange={emailValid}/>
-                <label htmlFor="user-message">{message}</label>
-                <input type="text" id="user-message" required placeholder="Type your message here" onBlur={messageCheck}/>
+
+                <label htmlFor="user-email">Your Email <span className="required">*</span></label>
+                <input type="text" id="user-email" autoComplete="email" required placeholder="Enter an email address"  onBlur={emailCheck} />
+                <label htmlFor="user-message">Message <span className="required">*</span></label>
+                <textarea id="user-message" required placeholder="Type your message here" onBlur={messageCheck}/>
                 <button id="submit-btn">Submit</button>
             </form>
             <p className="error-text">{errorMessage}</p>
