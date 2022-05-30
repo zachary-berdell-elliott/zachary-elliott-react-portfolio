@@ -125,8 +125,10 @@ footer nav a {
     margin-right: auto;
     margin-top: 4%;
     padding: 3% 2.5%;
-    border-style:groove;
+    border-style: solid;
+    border-width: 1px;
     border-radius: 4px;
+    box-shadow: 20px 10px;
 }
 
 #submit-btn {
