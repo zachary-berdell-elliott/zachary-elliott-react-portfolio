@@ -16,23 +16,32 @@ function ContactMe() {
     const [feedback, setFeedback] = useState('');
 
     //Function for handling form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = (event) => {
         //e.preventDefault;
 
 
     }
 
     const messageCheck = (e) => {
-        e.preventDefault;
+        !e.target.value.length ? setErrorMessages({
+            ...errorMessages,
+            messageError: 'You must enter a message in order to proceed.'
+        }) : setErrorMessages({
+            ...errorMessages,
+            messageError: ''
+        });
 
-
+        setFieldEngaged({
+            ...fieldEngaged,
+            messageEngaged: true
+        });
     }
 
     const emailCheck = (e) => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const emailValid = re.test(String(e.target.value).toLowerCase());
 
-        if (!event.target.value.length) {
+        if (!e.target.value.length) {
             setErrorMessages({
                 ...errorMessages,
                 emailError: 'Your email is required.'
@@ -48,11 +57,14 @@ function ContactMe() {
                 emailError: ''
             });
         }
+
+        setFieldEngaged({
+            ...fieldEngaged,
+            emailEngaged: true
+        });
     }
 
     const nameCheck = (e) => {
-        e.preventDefault;
-
         !e.target.length ? setErrorMessages({
             ...errorMessages,
             nameError: 'Please eneter a name to submit this form.'
@@ -60,7 +72,13 @@ function ContactMe() {
             ...errorMessages,
             nameError: ''
         });
+
+        setFieldEngaged({
+            ...fieldEngaged,
+            nameEngaged: true
+        });
     }
+    
     return(
         <main>
             <h2>Contact Me</h2>
@@ -74,7 +92,7 @@ function ContactMe() {
                 <textarea id="user-message" required placeholder="Type your message here" onBlur={messageCheck}/>
                 <button id="submit-btn">Submit</button>
             </form>
-            <p className="error-text">{errorMessage}</p>
+            <p className="feedback-text">{feedback}</p>
         </main>
     );
 }
