@@ -1,22 +1,25 @@
 import React from 'react';
 
-function NavBar(props, { currentPage, handlePageChange }) {
+function NavBar() {
     //Array with objects that are used to render the anchor tags
     const links = [{title: 'About Me', href: 'about-me'}, 
     {title: 'Portfolio', href: 'portfolio'},
     {title: 'Contact Me', href: 'contact-me'},
     {title: "Resume", href: 'resume'}]; 
+
+    const currentPage = window.location.href.split('/');
+    const currHref = currentPage[currentPage.length - 1];
+
     //Renders the nav bar 
     return (
-        <nav>
+        <nav className="header-nav">
             <ul>
             {/* Creates an anchor tag for each item in the array and adds logic to make it render for the current page */}
             {links.map(link => (
                     <li key={link.title}>
-                        {console.log(currentPage)}
                         <a href={link.href.toLowerCase()}
-                            className={currentPage === link.title.replace(/ /g, '') ? 'nav-link active' : 'nav-link'}
-                            onClick={() => handlePageChange(link.title.replace(/ /g, ''))}>
+                            className={currHref === link.href ? 'nav-link active' : 'nav-link'}
+                            aria-selected={currHref === link.href ? 'true' : 'false'} >
                             {link.title}
                         </a>
                     </li>

@@ -23,7 +23,6 @@ function AboutMe() {
             I recently accepted a postion as an Associate Software Developer at Charles Schwab.
             I am also willing to do work on the side. Please see my page on services or contact me to learn more.
             </p>
-            <div className="bottom-el">test</div>
         </main>
     );
 }

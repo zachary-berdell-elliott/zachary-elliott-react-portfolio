@@ -1,12 +1,12 @@
 import React from 'react';
 import NavBar from './NavBar';
 
-function Header(props, { currentPage, handlePageChange }) {
+function Header() {
 
     return (
         <header>
             <h1>Zachary Elliott</h1>
-            <NavBar currentPage={currentPage} handlePageChange={handlePageChange}/>
+            <NavBar />
         </header>
     )
 }

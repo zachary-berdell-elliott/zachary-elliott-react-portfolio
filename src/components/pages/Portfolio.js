@@ -82,7 +82,7 @@ function Portfolio() {
                                     Github and Description
                                 </h3>
                             </button>
-                            <div classname="project-description">
+                            <div className="project-description">
                                 {project.description}
                                 <a href={project.GitHubLink}>
                                     GitHub Repository
