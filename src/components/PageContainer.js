@@ -4,6 +4,7 @@ import Header from './Header';
 import AboutMe from './pages/AboutMe';
 import Portfolio from './pages/Portfolio';
 import ContactMe from './pages/ContactMe';
+import Services from './pages/Services';
 import Resume from './pages/Resume';
 import Footer from './Footer';
 
@@ -17,6 +18,7 @@ function PageContainer() {
                 <Route exact path="/portfolio" element={<Portfolio />} />
                 <Route exact path="/contact-me" element={<ContactMe />} />
                 <Route exact path="/resume" element={<Resume />} />
+                <Route exact path="/services" element={<Services />} />
                 <Route exact path="*" element={<AboutMe />} />
             </Routes>
             <Footer />

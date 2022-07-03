@@ -5,7 +5,8 @@ function NavBar() {
     const links = [{title: 'About Me', href: 'about-me'}, 
     {title: 'Portfolio', href: 'portfolio'},
     {title: 'Contact Me', href: 'contact-me'},
-    {title: "Resume", href: 'resume'}]; 
+    {title: "Resume", href: 'resume'},
+    {title: 'Services', href: 'services'}]; 
 
     const currentPage = window.location.href.split('/');
     const currHref = currentPage[currentPage.length - 1];
