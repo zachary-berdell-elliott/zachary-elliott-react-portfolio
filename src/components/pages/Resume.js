@@ -57,10 +57,10 @@ function Resume() {
                         </ul>
                     </article>
                 </section>
-                <section className="button-section">
+                <aside className="button-section">
                     <p>This is a list of some of the skills I am proficient in. Read over the list or click the button below to download my resume. I am able to learn new technologies also.</p>
                     <button id="resume-btn">Download Resume</button>
-                </section>
+                </aside>
                 </div>
             </main>
     )
